@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Menu(models.Model):
@@ -8,4 +7,12 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Purchase(models.Model):
+    date = models.DateField()
+    number_of_bottles = models.IntegerField()
+    rupees = models.DecimalField(max_digits=10, decimal_places=2)
+
+
+
     
