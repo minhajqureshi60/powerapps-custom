@@ -8,6 +8,7 @@ class MenuSerializer(serializers.ModelSerializer):
         #fields=('id','name','parent')
         fields='__all__'
 
+
 class PurchaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Purchase
