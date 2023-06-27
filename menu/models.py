@@ -11,7 +11,7 @@ class Menu(models.Model):
     
 
 class Purchase(models.Model):
-    date = models.DateField()
+    date = models.DateField(auto_now=True)
     number_of_bottles = models.IntegerField()
     rupees = models.DecimalField(max_digits=10, decimal_places=2)
 
