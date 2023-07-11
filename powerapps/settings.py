@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from .swagger_info import swagger_info
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'knox',
-    'menu'
+    'menu',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +131,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
     ]
+}
+
+SWAGGER_SETTINGS = {
+    'DEFAULT_INFO': swagger_info,  # Specify the path to your Swagger API information dictionary
 }
